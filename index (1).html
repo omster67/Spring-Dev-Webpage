@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubik's Cube Game</title>
+    <style>
+        :root {
+            --cube-blue: #0046ad;
+            --cube-red: #b71234;
+            --cube-green: #009b48;
+            --cube-orange: #ff5800;
+            --cube-yellow: #ffd500;
+            --cube-white: #ffffff;
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
+            margin: 0;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* --- Navbar --- */
+        nav {
+            background-color: #000;
+            border-bottom: 5px solid var(--cube-green);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--cube-white);
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--cube-yellow); }
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #000, var(--bg-dark));
+            border-bottom: 2px dashed #444;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 5px 5px 0px var(--cube-red);
+            letter-spacing: -2px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            margin-bottom: 100px;
+            padding-top: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 4px solid #000;
+            padding: 30px;
+            position: relative;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 2rem;
+            margin-top: 0;
+            color: var(--cube-white);
+        }
+
+        /* --- Content Elements --- */
+        .game-container {
+            width: 100%;
+            background: #000;
+            border: 8px solid #333;
+            aspect-ratio: 16 / 9;
+            margin-bottom: 25px;
+        }
+
+        iframe { width: 100%; height: 100%; border: none; }
+
+        /* --- GitHub Repo Section --- */
+        .repo-box {
+            background: #111;
+            border: 2px solid var(--cube-blue);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .repo-btn {
+            display: inline-block;
+            background: var(--cube-white);
+            color: black;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 3px solid var(--cube-blue);
+            transition: 0.3s;
+            margin-right: 15px;
+        }
+
+        .repo-btn:hover { background: var(--cube-blue); color: white; }
+
+        .clone-command {
+            background: #222;
+            color: var(--cube-green);
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #444;
+            display: inline-block;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .code-block {
+            background: #000;
+            border-left: 5px solid var(--cube-yellow);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .screenshot-placeholder {
+            width: 100%;
+            border: 2px solid #555;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+        .partner-note {
+            font-style: italic;
+            color: var(--cube-orange);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#play">Play The Game</a>
+        <a href="#about">Description</a>
+        <a href="#controls">Instructions</a>
+        <a href="#logic">Learning Goals</a>
+        <a href="#assistance">LLM Assistance</a>
+    </nav>
+
+    <header>
+        <h1>RUBIX CUBE GAME</h1>
+        <p>Created by: Om Patel</p>
+    </header>
+
+    <div class="container">
+
+        <section id="play">
+            <div class="card" style="box-shadow: 12px 12px 0px var(--cube-blue);">
+                <h2>The Rubix Cube Game</h2>
+                <div class="game-container">
+                    <iframe src="https://editor.p5js.org/om.patel/full/NMtimVVHr"></iframe>
+                </div>
+
+                <div class="repo-box">
+                    <h3 style="margin-top:0; color: var(--cube-blue);">Github Repository</h3>
+                    <p>Access the game's repository here.</p>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+                        <a href="https://github.com/MCST-CIS/spring-dev-project-spring-dev.git" target="_blank" class="repo-btn">
+                            OPEN REPOSITORY
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="card" style="box-shadow: 12px 12px 0px var(--cube-red);">
+                <h2>Description:</h2>
+                <p>
+                    The purpose of this project is to teach students how 3D logic and Object Orientated Programming could be used to make complicated games online. I personally made this game to show my hobbies and interests and to also show how I like solving puzzles using algorithms.
+                </p>
+            </div>
+        </section>
+
+        <section id="controls">
+            <div class="card" style="box-shadow: 12px 12px 0px var(--cube-orange);">
+                <h2>Instructions:</h2>
+                <p>Cube Controls:</p>
+                <ul>
+                    <li><strong>U key: </strong>Top Face Rotation</li>
+                    <li><strong>D key: </strong>Bottom Face Rotation</li>
+                    <li><strong>L key: </strong>Left Face Rotation</li>
+                    <li><strong>R key: </strong>Right Face Rotation</li>
+                    <li><strong>F key: </strong>Front Face Rotation</li>
+                    <li><strong>B key: </strong>Back Face Rotation</li>
+                    <li><strong>J key: </strong>Horizontal Top Middle Face Rotation</li>
+                    <li><strong>N key: </strong>Horizontal Front Middle Face Rotation</li>
+                    <li><strong>M key: </strong>Vertical Front Middle Face Rotation</li>
+                    <li><strong>S key: </strong>Scramble</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="logic">
+            <div class="card" style="box-shadow: 12px 12px 0px var(--cube-yellow);">
+                <h2>Learning Goal: Technical Analysis</h2>
+                
+                <div class="code-block">
+                    <h3>1. Method with Parameters</h3>
+                    <img src="https://uploads.onecompiler.io/44nczwfc9/44ngqntta/parameter.png" alt="Method with Parameters" class="screenshot-placeholder">
+                    <p>
+                        <strong>Functionality:</strong> This method uses the k parameter to capture the user input from the keyboard. By pressing the key in the function, the program is able to determine what moves to be executed without using different functions to exceute every time.
+                    </p>
+                </div>
+                <div class="code-block" style="border-left-color: var(--cube-green);">
+                    <h3>2. Method with Return Value</h3>
+                    <img src="https://uploads.onecompiler.io/44nczwfc9/44ngqntta/Screenshot%202026-05-06%202.49.48%20PM.png" alt="Method with Return Value" class="screenshot-placeholder">
+                    <p>
+                        <strong>Functionality:</strong> This method checks if the cubie is part of the rotation slice for the cube so it runs a coordinate check on the cubie and returns a boolean value. This is important because it tells the program what pieces to move or not.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="assistance">
+            <div class="card" style="box-shadow: 12px 12px 0px var(--cube-white);">
+                <h2>LLM Assistance:</h2>
+                <p>
+                    The LLM assisted in designing the HTML and CSS for the timer section of the cube and provided help for creating the base code for the cube. It also helped the way the M, N, and J middle slices work and the specific colors for each cubie. The LLM helped alot becase it added things that a normal game wouldn't have, like 3D logic, making the game very interactive.
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
